@@ -72,8 +72,8 @@ object Lists {
                 nCounter = nCounter + 1
             }
         }
-            if(nCounter == 0) nCounter = nCounter + 1
-            result = acc/nCounter
+        if(nCounter == 0) nCounter = nCounter + 1
+        result = acc/nCounter
         return result
     }
     
