@@ -4,7 +4,7 @@
     <profile name="Maven 1" modules="fp-template">
       <parameters>
         <parameter value="-dependencyfile" />
-        <parameter value="C:\Users\arsla\Desktop\Big data processing\Functional programing\fp\target/.scala_dependencies" />
+        <parameter value="C:\Users\arsla\Documents\GitHub\BDP_Assignment\target/.scala_dependencies" />
       </parameters>
     </profile>
   </component>
