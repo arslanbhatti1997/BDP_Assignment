@@ -6,8 +6,6 @@ package intro
   */
 object Lists {
 
-    //making a change in the lists file
-
     // Run this main function to see the result of the `println` calls.
     def main(args: Array[String]): Unit = {
         // In Scala, lists are defined recursively. A list of the item 1 looks like this:
@@ -64,5 +62,21 @@ object Lists {
       * Read the Scaladoc on the List class (https://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html)
       * It contains some useful functions for this exercise. For this question library functions are allowed.
       */
-    def customAverage(xs: List[Int], x: Int, n: Int): Int = ???
+    def customAverage(xs: List[Int], x: Int, n: Int): Int = {
+        var result = 0;
+        var nCounter = 0
+        var acc = 0
+        for(i <- xs) {
+            if (i > x && nCounter < n) {
+                acc = i + acc
+                nCounter = nCounter + 1
+            }
+        }
+            if(nCounter == 0) nCounter = nCounter + 1
+            result = acc/nCounter
+        return result
+    }
+
+
+    println(customAverage(List(1,2,5,1,7), 2, 2))
 }
