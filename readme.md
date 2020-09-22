@@ -87,3 +87,5 @@ Using Maven, all dependencies will be resolved automatically.
 3. Import the template folder as a Maven project.
 4. You are ready to start working :)
 
+making changes
+
