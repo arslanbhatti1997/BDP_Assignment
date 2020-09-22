@@ -76,7 +76,5 @@ object Lists {
             result = acc/nCounter
         return result
     }
-
-
-    println(customAverage(List(1,2,5,1,7), 2, 2))
+    
 }
