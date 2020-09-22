@@ -51,7 +51,4 @@ object Functions {
         }
     }
 
-    def main(args: Array[String]) = {
-    }
-
 }
