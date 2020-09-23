@@ -35,11 +35,18 @@ object Practice {
       * @param xs list to process.
       * @return the maximum value in the list.
       */
-    def maxValue(xs: List[Int]): Int = ???
-
-
-    def main(args: Array[String]) = {
-        val nums = List[Int](4,5,7)
-        println(firstN(nums, 2))
+    def maxValue(xs: List[Int]): Int = {
+        var max = 0
+        xs match {
+            case head::tail =>
+            max = head
+            if(max > maxValue(tail)) {
+                max = head
+            }else{
+                max = maxValue(tail)
+            }
+            case Nil => max = Int.MinValue
+        }
+        max
     }
 }
