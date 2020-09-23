@@ -18,7 +18,14 @@ object Practice {
       * @param n amount of items to take.
       * @return the first n items of xs.
       */
-    def firstN(xs: List[Int], n: Int): List[Int] = ???
+    def firstN(xs: List[Int], n: Int): List[Int] = {
+        xs match {
+            case head::tail =>
+                if (n == 0) List[Int]()
+                else  head +: firstN(tail, n-1)
+            case Nil => List[Int]()
+        }
+    }
 
 
     /** Q6 (3p)
@@ -28,5 +35,18 @@ object Practice {
       * @param xs list to process.
       * @return the maximum value in the list.
       */
-    def maxValue(xs: List[Int]): Int = ???
+    def maxValue(xs: List[Int]): Int = {
+        var max = 0
+        xs match {
+            case head::tail =>
+            max = head
+            if(max > maxValue(tail)) {
+                max = head
+            }else{
+                max = maxValue(tail)
+            }
+            case Nil => max = Int.MinValue
+        }
+        max
+    }
 }
