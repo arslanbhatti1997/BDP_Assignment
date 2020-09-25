@@ -48,7 +48,13 @@ object FPFunctions {
       * @param xs the list to flatten.
       * @return one list containing all items in `xs`.
       */
-    def recFlat(xs: List[Any]): List[Any] = ???
+    def recFlat(xs: List[Any]): List[Any] =
+        xs match {
+            case (head : List[Any]) :: tail =>
+                recFlat(head) ::: recFlat(tail)
+            case head :: tail => head :: recFlat(tail)
+            case Nil => List[Any]()
+        }
 
     /** Q10 (5p)
       * Takes `f` of 2 arguments and an `init` value and combines the elements by applying `f` on the result of each previous application.
@@ -85,8 +91,9 @@ object FPFunctions {
     def zip[A, B](xs: List[A], ys: List[B]): List[(A, B)] = ???
 
     def main(args: Array[String]) = {
-        val lst = List(1,2,3)
-        println(map(lst, (x : Int) => x + 2))
+        val lst = List(List(2,3), List(4))
+
+        println(recFlat(lst))
     }
 
 }
