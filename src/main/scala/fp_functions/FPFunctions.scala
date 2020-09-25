@@ -1,5 +1,4 @@
 package fp_functions
-
 /**
   * This part is about implementing several functions that are very common in functional programming.
   * For the exercises in this part you are _not_ allowed to use library functions.
@@ -18,7 +17,13 @@ object FPFunctions {
       * @tparam B result type of mapping function.
       * @return a list of all items in `xs` mapped with `f`.
       */
-    def map[A, B](xs: List[A], f: A => B): List[B] = ???
+    def map[A, B](xs: List[A], f: A => B): List[B] = {
+    xs match {
+        case head::tail => f(head) +: map(tail, f)
+        case Nil => List[B]()
+    }
+    }
+
 
     /** Q8 (5p)
       * Takes a function that returns a boolean and returns all elements that satisfy it.
@@ -71,4 +76,10 @@ object FPFunctions {
       * @return a list of tuples of items in `xs` and `ys`.
       */
     def zip[A, B](xs: List[A], ys: List[B]): List[(A, B)] = ???
+
+    def main(args: Array[String]) = {
+        val lst = List(1,2,3)
+        println(map(lst, (x : Int) => x + 2))
+    }
+
 }
